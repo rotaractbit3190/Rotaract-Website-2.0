@@ -36,8 +36,9 @@ dependencies:
   cupertino_icons: ^1.0.2
   google_fonts: 2.2.0
   video_player: ^2.2.19
-
+  url_launcher: ^6.0.20
   video_player_web: ^2.0.7
+  youtube_player_iframe: ^2.2.2
 
 dev_dependencies:
   flutter_test:
@@ -63,9 +64,9 @@ flutter:
 
   # To add assets to your application, add an assets section, like this:
   assets:
-    - assets/plain-black-wallpaper.jpg
-    - assets/Title_logo.png
-    - assets/test.mp4
+    - assets/
+    - assets/logo 2.mp4
+
 
 
 

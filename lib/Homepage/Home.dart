@@ -8,6 +8,9 @@ import 'package:flutter/material.dart';
 import 'package:google_fonts/google_fonts.dart';
 import 'package:video_player/video_player.dart';
 import 'package:rotaract_website_new_gen/Homepage/for_video.dart';
+import 'package:rotaract_website_new_gen/footer.dart';
+import 'package:youtube_player_iframe/youtube_player_iframe.dart';
+
 
 
 class Home extends StatefulWidget {
@@ -18,34 +21,41 @@ class Home extends StatefulWidget {
 }
 
 class _HomeState extends State<Home> {
-  VideoPlayerController _controller;
+  // VideoPlayerController _controller;
+  YoutubePlayerController _controller;
 
   @override
   void initState() {
     super.initState();
-    _controller = VideoPlayerController.network(
-        'https://commondatastorage.googleapis.com/gtv-videos-bucket/sample/BigBuckBunny.mp4')
-      ..addListener(() => setState(() {
-        videoPosition = _controller.value.position;
-      }))
-      ..initialize().then((_) =>
-          setState(() {
-        videoLength = _controller.value.duration;
-        _controller.initialize().then((value) => _controller.play());
+
+    _controller = YoutubePlayerController(
 
 
-          }));
+      initialVideoId: 'TFAg_zrAV4I',
+      params: YoutubePlayerParams(// Defining custom playlist
+        autoPlay: true,
+        showControls: false,
+        loop: true,
+        enableCaption: false,
+        strictRelatedVideos: true,
+        showFullscreenButton: false,
+        showVideoAnnotations:false,
+
+
+
+
+
+
+
+
+
+
+
+
+      ),
+    );
   }
 
-  Duration videoLength;
-  Duration videoPosition;
-  double volume = 0.5;
-
-  @override
-  void dispose() {
-    super.dispose();
-    _controller.dispose();
-  }
 
 
 
@@ -70,6 +80,9 @@ class _HomeState extends State<Home> {
         child: Container(
           color: Color.fromRGBO(36, 37, 39, 1),
           child: ListView(
+
+          // scrollDirection: Axis.horizontal,
+          //   shrinkWrap: true,
             children: [
               Container(
                 child: Padding(
@@ -94,6 +107,14 @@ class _HomeState extends State<Home> {
                 leading: Icon(Icons.home, color: Colors.grey),
                 onTap: () {
                   Navigator.pushNamed(context, '/');
+                },
+
+              ),
+              ListTile(
+                title: Text("Rotary", style: TextStyle(color: Colors.white),),
+                leading: Icon(Icons.calendar_today_rounded, color: Colors.grey),
+                onTap: () {
+                  Navigator.pushNamed(context, '/Rotary');
                 },
 
               ),
@@ -146,14 +167,8 @@ class _HomeState extends State<Home> {
             child: Column(
               children: [
                 isScreenSmall ?
-                Row(
-                  // children: [
-                  //           Padding(
-                  //           padding: const EdgeInsets.only(left: 20,top: 5),
-                  //           child: Image.asset("Title_logo.png",height: screenSize.height*0.2,width: screenSize.width*0.4,),
-                  //            ),
-                  //           ],
-                )
+                    Row()
+
 
 
                     : Row(
@@ -181,9 +196,9 @@ class _HomeState extends State<Home> {
 
                               color: Colors.white
                           ),
-                          onPressed: () {},
-                          child: Text('', style: TextStyle(
-                              color: Colors.white),),
+                          onPressed: () {Navigator.pushReplacementNamed(context, "/");},
+                          child: Text('Home', style: GoogleFonts.oswald(
+                              color: Colors.white,fontSize: 20,fontWeight: FontWeight.w100),),
                         ),
                       ),
                     ),
@@ -201,9 +216,9 @@ class _HomeState extends State<Home> {
 
                               color: Colors.white
                           ),
-                          onPressed: () {},
-                          child: Text('', style: TextStyle(
-                              color: Colors.white),),
+                          onPressed: () {Navigator.pushNamed(context, "/Rotary");},
+                          child: Text('Rotary', style: GoogleFonts.oswald(
+                              color: Colors.white,fontSize: 20,fontWeight: FontWeight.w100),),
                         ),
                       ),
                     ),
@@ -251,20 +266,31 @@ class _HomeState extends State<Home> {
 
                   ],
                 ),
-                SizedBox(height: 70,),
+                SizedBox(height: 20,),
                 isScreenSmall ?
                 Column(
                   children: [
+
+                    Padding(
+                      padding: const EdgeInsets.only(left: 30,right: 30,top: 50,bottom: 50),
+                      child: YoutubePlayerIFrame(
+                        controller: _controller,
+                        aspectRatio:  screenSize.height*0.002,
+
+                      ),
+                    ),
+
+
                     Column(
                       children: [
                         Padding(
-                          padding: const EdgeInsets.only(left: 20),
+                          padding: const EdgeInsets.only(left: 5),
                           child: Text("Rotaract Club Of BIT", style: GoogleFonts
-                              .oswald(color: Colors.white, fontSize: 50)),
+                              .zcoolQingKeHuangYou(color: Colors.white, fontSize: 50)),
 
                         ),
                         Padding(
-                          padding: const EdgeInsets.only(left: 30, right: 30),
+                          padding: const EdgeInsets.only(left: 45, right: 35),
                           child: Text(
                               "We, the team of Rotaract Club of Bangalore B.I.T. have decided the theme of the Rotayear 2021-22 to be “Roar Like One”. We believe in standing out as exceptional. The brilliant team we have this year has unique talents. Shining like a bright unicorn with the horn as our guiding spirit, we would be developing leadership and bravery. With optimistic spirits and unity, we wish to prove ourselves to be extraordinary. Sticking to roots yet flying high above is what we mean by our logo, the Unicorn. We are aiming for an exclusive Rotayear. As galant and proud as a unicorn, our club is ready for this upcoming joyride of Rotaract. \n We, Aim to Be Exceptional.",
                               style: GoogleFonts.oswald(color: Colors.white,
@@ -282,10 +308,11 @@ class _HomeState extends State<Home> {
                           child: Card(
                               color: Colors.orange,
                               child: Column(
+                                crossAxisAlignment: CrossAxisAlignment.center,
                                 children: [
                                   Image.asset("principal.jpg",
-                                    height: screenSize.height * 0.37,
-                                    width: screenSize.width * 0.5,),
+                                    height: screenSize.height * 0.39,
+                                    width: screenSize.width * 0.5,fit: BoxFit.fitWidth,),
                                   Text("Rtn. Dr. Ashwath MU",
                                     style: GoogleFonts.oswald(
                                         color: Colors.white, fontSize: 30),)
@@ -300,71 +327,43 @@ class _HomeState extends State<Home> {
                           child: Card(
                               color: Colors.orange,
                               child: Column(
+                                crossAxisAlignment: CrossAxisAlignment.center,
                                 children: [
                                   Image.asset("rotary_pres_latest.jpg",
-                                    height: screenSize.height * 0.45,
-                                    width: screenSize.width * 0.45,
-                                    fit: BoxFit.fill,),
+                                    height: screenSize.height * 0.42,
+                                    width: screenSize.width * 0.50,
+                                    fit: BoxFit.fitWidth,),
                                   Text("Rtn. SRIDHAR RAMAMURTHY",
                                     style: GoogleFonts.oswald(
                                         color: Colors.white, fontSize: 23.5),)
                                 ],
                               )
                           )),
-                    )
+                    ),
 
                   ],
                 )
 
-
                     : Column(
-                  children: [
-                    // Container(
-                    //   height: 200,
-                    //   width: 100,
-                    //   child:
-                    // )
-                    if (_controller.value.isInitialized)
-                      AspectRatio(
-                        aspectRatio: _controller.value.aspectRatio,
-                        child: Padding(
-                          padding: const EdgeInsets.only(left: 50,right: 50,top: 70,bottom: 20),
-                          child: VideoPlayer(_controller),
-                       ),
-                      ),
-                    // VideoProgressIndicator(
-                    //   _controller,
-                    //   allowScrubbing: true,
-                    //   padding: EdgeInsets.all(10),
-                    // ),
-                    Row(
-                      mainAxisAlignment: MainAxisAlignment.start,
-                      crossAxisAlignment: CrossAxisAlignment.start,
-                      children: [
-                        Padding(
-                          padding: const EdgeInsets.only(left: 140),
-                          child: IconButton(
-                            icon: Icon(_controller.value.isPlaying
-                                ? Icons.pause
-                                    : Icons.play_arrow,color: Colors.white,),
-                            onPressed: () {
-                              setState(() {
-                                _controller.value.isPlaying
-                                    ? _controller.pause()
-                                    : _controller.play();
-                              });
-                            },
-                          ),
+                    children: [
+
+
+                      Padding(
+                        padding: const EdgeInsets.only(left: 200,right: 200),
+                        child: YoutubePlayerIFrame(
+                           controller: _controller,
+                          aspectRatio:  screenSize.height*0.002,
+
+
                         ),
-
-                      ],
-                    ),
+                      ),
 
 
 
 
                     Row(
                       children: [
+
 
                         Expanded(
                           flex: 2,
@@ -392,6 +391,8 @@ class _HomeState extends State<Home> {
                             ],
                           ),
                         ),
+
+
                         Expanded(
                           flex: 1,
                           child: Padding(
@@ -455,7 +456,9 @@ class _HomeState extends State<Home> {
                 ),
                 SizedBox(height: 80,),
                 Container(
-                  height: screenSize.height * 0.7,
+                  height: isScreenSmall?
+                  screenSize.height * 0.9
+                  :screenSize.height * 0.7,
                   width: screenSize.width * 0.8,
 
                   child: ClipRRect(
@@ -463,7 +466,84 @@ class _HomeState extends State<Home> {
                     child: Card(
                       color: Color.fromRGBO(49, 49, 49, 1),
 
-                      child: Row(
+
+                      child:
+                          isScreenSmall?
+
+                          Column(
+                              children: [
+                          ClipRRect(
+                          borderRadius: BorderRadius.circular(10),
+
+                        child: Image.asset("Treaking.jpg",
+                          height: 250,
+                          width: screenSize.width*0.9,
+
+                          fit: BoxFit.fill)),
+
+                      Container(
+
+                        width: screenSize.width*0.6,
+                        child: Column(
+                          children: [
+                            Padding(
+                              padding: const EdgeInsets.only(
+                                  top: 20, left: 0),
+                              child: Center(
+                                child: Text("Events",
+                                  style: GoogleFonts.zcoolQingKeHuangYou(
+                                      fontSize: 50,
+                                      color: Color.fromRGBO(
+                                          255, 255, 255, 1)),),
+                              ),
+                            ),
+
+                            Padding(
+                              padding: const EdgeInsets.only(
+                                  left: 10, top: 35),
+                              child: Text(
+                                "The events conducted by the Rotaract Club of Bit for the year 2022-2023",
+                                style: GoogleFonts.openSans(
+                                    fontSize: 20, color: Colors.white),),
+                            ),
+                            SizedBox(height: 20,),
+                            Padding(
+                              padding: const EdgeInsets.only(left: 30,right: 30),
+                              child: ClipRRect(
+                                borderRadius: BorderRadius.circular(25),
+                                child: Container(
+                                  width: 300,
+                                  height: 50,
+                                  child: RaisedButton(
+                                      color: Colors.white,
+                                      elevation: 2.0,
+
+                                      child: Row(
+                                        mainAxisAlignment: MainAxisAlignment.center,
+                                        children: [
+                                          Text("Next",
+                                              style: GoogleFonts
+                                                  .zcoolQingKeHuangYou(
+                                                  fontSize: 22,
+                                                  fontWeight: FontWeight
+                                                      .bold)),
+                                          Icon(Icons.arrow_forward_ios,
+                                            color: Colors.grey,)
+                                        ],
+                                      ),
+
+
+                                      onPressed: () {}),
+                                ),
+                              ),
+                            )
+                          ],
+                        ),
+                      ),
+                       ]
+                       )
+
+                     : Row(
                         children: [
                           ClipRRect(
                               borderRadius: BorderRadius.circular(10),
@@ -533,8 +613,11 @@ class _HomeState extends State<Home> {
                 ),
                 SizedBox(height: 100,),
 
+
                 Container(
-                  height: screenSize.height * 0.7,
+                  height: isScreenSmall?
+                  screenSize.height * 0.9
+                      :screenSize.height * 0.7,
                   width: screenSize.width * 0.8,
 
 
@@ -543,7 +626,85 @@ class _HomeState extends State<Home> {
                     child: Card(
                       color: Color.fromRGBO(49, 49, 49, 1),
 
-                      child: Row(
+                      child: isScreenSmall?
+                      Column(
+
+                        children: [
+                          Column(
+                            mainAxisAlignment: MainAxisAlignment.center,
+                            crossAxisAlignment: CrossAxisAlignment.center,
+
+                            children: [
+                              ClipRRect(
+                                  borderRadius: BorderRadius.circular(10),
+
+                                  child: Image.asset("rotary_international.png",
+                                    height: screenSize.height * 0.3,
+                                    width: screenSize.width * 0.5,
+                                    fit: BoxFit.fitWidth,)),
+                              Center(
+                                child: Container(
+                                  color: Colors.grey,
+                                  height: 1,
+                                  width: 300,
+                                ),
+                              ),
+
+                              Padding(
+                                padding: const EdgeInsets.only(
+                                    top: 40, bottom: 30),
+                                child: Text("Rotary",
+                                  style: GoogleFonts.zcoolQingKeHuangYou(
+                                      fontSize: 70,
+                                      color: Color.fromRGBO(
+                                          255, 255, 255, 1)),),
+                              ),
+
+                              Padding(
+                                padding: const EdgeInsets.only(bottom: 20),
+                                child: Text(" More about the  Rotary",
+                                  style: GoogleFonts.openSans(
+                                      fontSize: 25, color: Colors.white),),
+                              ),
+                              SizedBox(height: 20,),
+                              ClipRRect(
+                                borderRadius: BorderRadius.circular(25),
+                                child: Container(
+                                  width: 300,
+                                  height: 50,
+                                  child: RaisedButton(
+                                      color: Colors.white,
+                                      elevation: 2.0,
+
+                                      child: Row(
+                                        mainAxisAlignment: MainAxisAlignment.center,
+                                        children: [
+                                          Text("Next",
+                                              style: GoogleFonts
+                                                  .zcoolQingKeHuangYou(
+                                                  fontSize: 22,
+                                                  fontWeight: FontWeight
+                                                      .bold)),
+                                          Icon(Icons.arrow_forward_ios,
+                                            color: Colors.grey,)
+                                        ],
+                                      ),
+
+
+                                      onPressed: () {}),
+                                ),
+                              )
+                            ],
+                          ),
+                          SizedBox(width: 80,),
+
+
+                        ],
+                      )
+
+
+
+                      :Row(
                         children: [
                           Padding(
                             padding: const EdgeInsets.only(
@@ -623,16 +784,96 @@ class _HomeState extends State<Home> {
                   ),
                 ),
                 SizedBox(height: 100),
+
                 Container(
-                  height: screenSize.height * 0.7,
+                  height:isScreenSmall?
+                  screenSize.height * 0.9
+                      :screenSize.height * 0.7,
                   width: screenSize.width * 0.8,
+
 
                   child: ClipRRect(
                     borderRadius: BorderRadius.circular(20),
                     child: Card(
                       color: Color.fromRGBO(49, 49, 49, 1),
 
-                      child: Row(
+                      child: isScreenSmall?
+                      Column(
+                          children: [
+                            ClipRRect(
+                                borderRadius: BorderRadius.circular(10),
+
+                                child: Image.asset("IMG_9338.JPG",
+                                    height: 250,
+                                    width: screenSize.width*0.9,
+
+                                    fit: BoxFit.fill)),
+
+                            Container(
+
+                              width: screenSize.width*0.6,
+                              child: Column(
+                                children: [
+                                  Padding(
+                                    padding: const EdgeInsets.only(
+                                        top: 20, left: 0),
+                                    child: Center(
+                                      child: Text("Board of Directors",
+                                        style: GoogleFonts.zcoolQingKeHuangYou(
+                                            fontSize: 40,
+                                            color: Color.fromRGBO(
+                                                255, 255, 255, 1)),),
+                                    ),
+                                  ),
+
+                                  Padding(
+                                    padding: const EdgeInsets.only(
+                                        left: 10, top: 35),
+                                    child: Text(
+                                      "Board of director of the Rotaract Club of Bit for the year 2022-2023",
+                                      style: GoogleFonts.openSans(
+                                          fontSize: 20, color: Colors.white),),
+                                  ),
+                                  SizedBox(height: 20,),
+                                  Padding(
+                                    padding: const EdgeInsets.only(left: 30,right: 30),
+                                    child: ClipRRect(
+                                      borderRadius: BorderRadius.circular(25),
+                                      child: Container(
+                                        width: 300,
+                                        height: 50,
+                                        child: RaisedButton(
+                                            color: Colors.white,
+                                            elevation: 2.0,
+
+                                            child: Row(
+                                              mainAxisAlignment: MainAxisAlignment.center,
+                                              children: [
+                                                Text("Next",
+                                                    style: GoogleFonts
+                                                        .zcoolQingKeHuangYou(
+                                                        fontSize: 22,
+                                                        fontWeight: FontWeight
+                                                            .bold)),
+                                                Icon(Icons.arrow_forward_ios,
+                                                  color: Colors.grey,)
+                                              ],
+                                            ),
+
+
+                                            onPressed: () {}),
+                                      ),
+                                    ),
+                                  )
+                                ],
+                              ),
+                            ),
+                          ]
+                      )
+
+
+
+                          : Row(
                         children: [
                           ClipRRect(
                               borderRadius: BorderRadius.circular(10),
@@ -696,14 +937,19 @@ class _HomeState extends State<Home> {
                                         onPressed: () {}),
                                   ),
                                 ),
-                              )
+
+                              ),
+
                             ],
-                          )
+                          ),
+
                         ],
                       ),
                     ),
                   ),
                 ),
+                SizedBox(height: 80,),
+                footer()
 
 
               ],
