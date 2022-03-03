@@ -256,9 +256,9 @@ class _HomeState extends State<Home> {
 
                               color: Colors.white
                           ),
-                          onPressed: () {},
-                          child: Text('', style: TextStyle(
-                              color: Colors.white),),
+                          onPressed: () {Navigator.pushReplacementNamed(context, "/Contact");},
+                          child: Text('Contact Us', style: GoogleFonts.oswald(
+                              color: Colors.white,fontSize: 20,fontWeight: FontWeight.w100),),
                         ),
                       ),
                     ),
@@ -457,7 +457,7 @@ class _HomeState extends State<Home> {
                 SizedBox(height: 80,),
                 Container(
                   height: isScreenSmall?
-                  screenSize.height * 0.9
+                  null
                   :screenSize.height * 0.7,
                   width: screenSize.width * 0.8,
 
@@ -471,6 +471,7 @@ class _HomeState extends State<Home> {
                           isScreenSmall?
 
                           Column(
+                            crossAxisAlignment: CrossAxisAlignment.center,
                               children: [
                           ClipRRect(
                           borderRadius: BorderRadius.circular(10),
@@ -481,64 +482,60 @@ class _HomeState extends State<Home> {
 
                           fit: BoxFit.fill)),
 
-                      Container(
+                      Column(
+                        children: [
+                          Padding(
+                            padding: const EdgeInsets.only(
+                                top: 20, left: 0),
+                            child: Center(
+                              child: Text("Events",
+                                style: GoogleFonts.zcoolQingKeHuangYou(
+                                    fontSize: 50,
+                                    color: Color.fromRGBO(
+                                        255, 255, 255, 1)),),
+                            ),
+                          ),
 
-                        width: screenSize.width*0.6,
-                        child: Column(
-                          children: [
-                            Padding(
-                              padding: const EdgeInsets.only(
-                                  top: 20, left: 0),
-                              child: Center(
-                                child: Text("Events",
-                                  style: GoogleFonts.zcoolQingKeHuangYou(
-                                      fontSize: 50,
-                                      color: Color.fromRGBO(
-                                          255, 255, 255, 1)),),
+                          Padding(
+                            padding: const EdgeInsets.only(
+                                left: 10, top: 35),
+                            child: Text(
+                              "The events conducted by the Rotaract Club of Bit for the year 2022-2023",
+                              style: GoogleFonts.openSans(
+                                  fontSize: 20, color: Colors.white),),
+                          ),
+                          SizedBox(height: 20,),
+                          Padding(
+                            padding: const EdgeInsets.only(bottom: 40),
+                            child: ClipRRect(
+                              borderRadius: BorderRadius.circular(25),
+                              child: Container(
+                                width: 300,
+                                height: 50,
+                                child: RaisedButton(
+                                    color: Colors.white,
+                                    elevation: 2.0,
+
+                                    child: Row(
+                                      mainAxisAlignment: MainAxisAlignment.center,
+                                      children: [
+                                        Text("Next",
+                                            style: GoogleFonts
+                                                .zcoolQingKeHuangYou(
+                                                fontSize: 22,
+                                                fontWeight: FontWeight
+                                                    .bold)),
+                                        Icon(Icons.arrow_forward_ios,
+                                          color: Colors.grey,)
+                                      ],
+                                    ),
+
+
+                                    onPressed: () {}),
                               ),
                             ),
-
-                            Padding(
-                              padding: const EdgeInsets.only(
-                                  left: 10, top: 35),
-                              child: Text(
-                                "The events conducted by the Rotaract Club of Bit for the year 2022-2023",
-                                style: GoogleFonts.openSans(
-                                    fontSize: 20, color: Colors.white),),
-                            ),
-                            SizedBox(height: 20,),
-                            Padding(
-                              padding: const EdgeInsets.only(left: 30,right: 30),
-                              child: ClipRRect(
-                                borderRadius: BorderRadius.circular(25),
-                                child: Container(
-                                  width: 300,
-                                  height: 50,
-                                  child: RaisedButton(
-                                      color: Colors.white,
-                                      elevation: 2.0,
-
-                                      child: Row(
-                                        mainAxisAlignment: MainAxisAlignment.center,
-                                        children: [
-                                          Text("Next",
-                                              style: GoogleFonts
-                                                  .zcoolQingKeHuangYou(
-                                                  fontSize: 22,
-                                                  fontWeight: FontWeight
-                                                      .bold)),
-                                          Icon(Icons.arrow_forward_ios,
-                                            color: Colors.grey,)
-                                        ],
-                                      ),
-
-
-                                      onPressed: () {}),
-                                ),
-                              ),
-                            )
-                          ],
-                        ),
+                          )
+                        ],
                       ),
                        ]
                        )
@@ -616,7 +613,8 @@ class _HomeState extends State<Home> {
 
                 Container(
                   height: isScreenSmall?
-                  screenSize.height * 0.9
+                      null
+
                       :screenSize.height * 0.7,
                   width: screenSize.width * 0.8,
 
@@ -667,31 +665,34 @@ class _HomeState extends State<Home> {
                                       fontSize: 25, color: Colors.white),),
                               ),
                               SizedBox(height: 20,),
-                              ClipRRect(
-                                borderRadius: BorderRadius.circular(25),
-                                child: Container(
-                                  width: 300,
-                                  height: 50,
-                                  child: RaisedButton(
-                                      color: Colors.white,
-                                      elevation: 2.0,
+                              Padding(
+                                padding: const EdgeInsets.only(bottom: 40),
+                                child: ClipRRect(
+                                  borderRadius: BorderRadius.circular(25),
+                                  child: Container(
+                                    width: 300,
+                                    height: 50,
+                                    child: RaisedButton(
+                                        color: Colors.white,
+                                        elevation: 2.0,
 
-                                      child: Row(
-                                        mainAxisAlignment: MainAxisAlignment.center,
-                                        children: [
-                                          Text("Next",
-                                              style: GoogleFonts
-                                                  .zcoolQingKeHuangYou(
-                                                  fontSize: 22,
-                                                  fontWeight: FontWeight
-                                                      .bold)),
-                                          Icon(Icons.arrow_forward_ios,
-                                            color: Colors.grey,)
-                                        ],
-                                      ),
+                                        child: Row(
+                                          mainAxisAlignment: MainAxisAlignment.center,
+                                          children: [
+                                            Text("Next",
+                                                style: GoogleFonts
+                                                    .zcoolQingKeHuangYou(
+                                                    fontSize: 22,
+                                                    fontWeight: FontWeight
+                                                        .bold)),
+                                            Icon(Icons.arrow_forward_ios,
+                                              color: Colors.grey,)
+                                          ],
+                                        ),
 
 
-                                      onPressed: () {}),
+                                        onPressed: () {}),
+                                  ),
                                 ),
                               )
                             ],
@@ -787,7 +788,7 @@ class _HomeState extends State<Home> {
 
                 Container(
                   height:isScreenSmall?
-                  screenSize.height * 0.9
+                  null
                       :screenSize.height * 0.7,
                   width: screenSize.width * 0.8,
 
@@ -813,6 +814,7 @@ class _HomeState extends State<Home> {
 
                               width: screenSize.width*0.6,
                               child: Column(
+                                crossAxisAlignment: CrossAxisAlignment.center,
                                 children: [
                                   Padding(
                                     padding: const EdgeInsets.only(
@@ -826,17 +828,13 @@ class _HomeState extends State<Home> {
                                     ),
                                   ),
 
-                                  Padding(
-                                    padding: const EdgeInsets.only(
-                                        left: 10, top: 35),
-                                    child: Text(
-                                      "Board of director of the Rotaract Club of Bit for the year 2022-2023",
-                                      style: GoogleFonts.openSans(
-                                          fontSize: 20, color: Colors.white),),
-                                  ),
+                                  Text(
+                                    "Board of director of the Rotaract Club of Bit for the year 2022-2023",
+                                    style: GoogleFonts.openSans(
+                                        fontSize: 20, color: Colors.white),),
                                   SizedBox(height: 20,),
                                   Padding(
-                                    padding: const EdgeInsets.only(left: 30,right: 30),
+                                    padding: const EdgeInsets.only(bottom: 40),
                                     child: ClipRRect(
                                       borderRadius: BorderRadius.circular(25),
                                       child: Container(

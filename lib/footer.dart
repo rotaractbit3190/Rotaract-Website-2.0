@@ -18,8 +18,11 @@ class _footerState extends State<footer> {
     bool isScreenSmall = screenSize.width<800;
     return Container(
       height:isScreenSmall?
-      screenSize.height*0.20
-      :screenSize.height*0.35,
+          100
+      :230,
+
+      // screenSize.height*0.20
+      // :screenSize.height*0.35,
       width: screenSize.width,
       color:  Color.fromRGBO(255, 152, 0,1),
         // const Color.fromRGBO(58, 23, 87,1)
@@ -115,10 +118,12 @@ class _footerState extends State<footer> {
                       padding: const EdgeInsets.only(right: 20),
                       child: Image.asset("linkedin.png",width: screenSize.width*0.03,height: screenSize.height*0.065,),
                     )),
-                const Padding(
+                 Padding(
                   padding: EdgeInsets.only(left: 210),
                   child: InkWell(
-                      child: Text("Contact Us",style: TextStyle(fontSize: 16),)
+                      child: Text("Contact Us",style: TextStyle(fontSize: 16),),
+                          onTap: () {Navigator.pushReplacementNamed(context, "/Contact");},
+
                   ),
                 ),
                 Padding(
