@@ -63921,11 +63921,11 @@ f=t.b
 g=A.bS(A.c([j,h,A.N(g,a2,A.DS(B.e,20),a2,a2)],f),B.o,B.n,B.l)
 h=q*0.02
 j=A.a0(a2,h,a2)
-e=A.bS(A.c([A.oq(B.by.h(0,600),a2,A.mq(a2,A.bz(B.fM,B.e,30),24,new A.a5z(),a2),30),A.a0(a2,a2,i),A.bk(A.c([A.N("Rtr. Rohan Verma",a2,A.DS(B.e,20),a2,a2),A.cS(!1,!0,A.N("+91-9199348774",a2,A.bd(a2,a2,B.e,a2,a2,a2,a2,a2,a2,a2,a2,18,a2,a2,a2,a2,!0,a2,a2,a2,a2,a2,a2,a2,a2),a2,a2),a2,!0,a2,a2,a2,a2,a2,a2,a2,a2,a2,new A.a5m(),a2,a2,a2)],f),B.o,B.n,B.l)],f),B.o,B.n,B.l)
+e=A.bS(A.c([A.oq(B.by.h(0,600),a2,A.mq(a2,A.bz(B.fM,B.e,30),24,new A.a5z(),a2),30),A.a0(a2,a2,i),A.bk(A.c([A.N("Rtr. Anushka Thakur",a2,A.DS(B.e,20),a2,a2),A.cS(!1,!0,A.N("+91-7479430908",a2,A.bd(a2,a2,B.e,a2,a2,a2,a2,a2,a2,a2,a2,18,a2,a2,a2,a2,!0,a2,a2,a2,a2,a2,a2,a2,a2),a2,a2),a2,!0,a2,a2,a2,a2,a2,a2,a2,a2,a2,new A.a5m(),a2,a2,a2)],f),B.o,B.n,B.l)],f),B.o,B.n,B.l)
 d=A.a0(a2,h,a2)
-c=A.bS(A.c([A.oq(B.by.h(0,600),a2,A.mq(a2,A.bz(B.fM,B.e,30),24,new A.a5n(),a2),30),A.a0(a2,a2,i),A.bk(A.c([A.N("Rtr. Manish Rakshith",a2,A.DS(B.e,18),a2,a2),A.cS(!1,!0,A.N("+91-6362796957",a2,A.bd(a2,a2,B.e,a2,a2,a2,a2,a2,a2,a2,a2,18,a2,a2,a2,a2,!0,a2,a2,a2,a2,a2,a2,a2,a2),a2,a2),a2,!0,a2,a2,a2,a2,a2,a2,a2,a2,a2,new A.a5o(),a2,a2,a2)],f),B.o,B.n,B.l)],f),B.o,B.n,B.l)
+c=A.bS(A.c([A.oq(B.by.h(0,600),a2,A.mq(a2,A.bz(B.fM,B.e,30),24,new A.a5n(),a2),30),A.a0(a2,a2,i),A.bk(A.c([A.N("Rtr. Sunaina Gattu",a2,A.DS(B.e,18),a2,a2),A.cS(!1,!0,A.N("+91-6366082930",a2,A.bd(a2,a2,B.e,a2,a2,a2,a2,a2,a2,a2,a2,18,a2,a2,a2,a2,!0,a2,a2,a2,a2,a2,a2,a2,a2),a2,a2),a2,!0,a2,a2,a2,a2,a2,a2,a2,a2,a2,new A.a5o(),a2,a2,a2)],f),B.o,B.n,B.l)],f),B.o,B.n,B.l)
 b=A.a0(a2,h,a2)
-a=A.bS(A.c([A.oq(B.by.h(0,600),a2,A.mq(a2,A.bz(B.fM,B.e,30),24,new A.a5p(),a2),30),A.a0(a2,a2,i),A.bk(A.c([A.N("Rtr. Ananya Shree",a2,A.DS(B.e,18),a2,a2),A.cS(!1,!0,A.N("+91-6202613419",a2,A.bd(a2,a2,B.e,a2,a2,a2,a2,a2,a2,a2,a2,18,a2,a2,a2,a2,!0,a2,a2,a2,a2,a2,a2,a2,a2),a2,a2),a2,!0,a2,a2,a2,a2,a2,a2,a2,a2,a2,new A.a5q(),a2,a2,a2)],f),B.o,B.n,B.l)],f),B.o,B.n,B.l)
+a=A.bS(A.c([A.oq(B.by.h(0,600),a2,A.mq(a2,A.bz(B.fM,B.e,30),24,new A.a5p(),a2),30),A.a0(a2,a2,i),A.bk(A.c([A.N("Rtr. Manu",a2,A.DS(B.e,18),a2,a2),A.cS(!1,!0,A.N("+91-6362542920",a2,A.bd(a2,a2,B.e,a2,a2,a2,a2,a2,a2,a2,a2,18,a2,a2,a2,a2,!0,a2,a2,a2,a2,a2,a2,a2,a2),a2,a2),a2,!0,a2,a2,a2,a2,a2,a2,a2,a2,a2,new A.a5q(),a2,a2,a2)],f),B.o,B.n,B.l)],f),B.o,B.n,B.l)
 h=A.a0(a2,h,a2)
 a0=A.oq(B.by.h(0,600),a2,A.mq(a2,A.bz(B.AA,B.e,30),24,new A.a5r(),a2),30)
 i=A.a0(a2,a2,i)
@@ -63969,19 +63969,19 @@ A.a5z.prototype={
 $0(){A.cD("tel:9199348774")},
 $S:1}
 A.a5m.prototype={
-$0(){A.cD("tel:9199348774")},
+$0(){A.cD("tel:7479430908")},
 $S:1}
 A.a5n.prototype={
-$0(){A.cD("tel:6362796957")},
+$0(){A.cD("tel:7479430908")},
 $S:1}
 A.a5o.prototype={
-$0(){A.cD("tel:6362796957")},
+$0(){A.cD("tel:6366082930")},
 $S:1}
 A.a5p.prototype={
-$0(){A.cD("tel:6362796957")},
+$0(){A.cD("tel:6366082930")},
 $S:1}
 A.a5q.prototype={
-$0(){A.cD("tel:6202613419")},
+$0(){A.cD("tel:6362542920")},
 $S:1}
 A.a5r.prototype={
 $0(){A.cD("mailto:bitrotaract@gmail.com")},
